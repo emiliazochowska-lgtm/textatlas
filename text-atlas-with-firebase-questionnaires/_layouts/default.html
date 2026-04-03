@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}">
+  <script defer src="{{ '/assets/comments.js' | relative_url }}"></script>
+  <script defer src="{{ '/assets/advanced.js' | relative_url }}"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script defer src="{{ '/assets/firebase-questions.js' | relative_url }}"></script>
+
+</head>
+<body>
+  <header class="site-header">
+    <a href="{{ '/' | relative_url }}" class="brand">{{ site.title }}</a>
+  </header>
+  <main class="page-shell">
+    {{ content }}
+  </main>
+</body>
+</html>

@@ -1,0 +1,21 @@
+---
+layout: default
+---
+<section class="hero">
+  <h1>Text Atlas</h1>
+  <p>A magazine-style archive for deep reading, reflection, and dialogue.</p>
+</section>
+<section class="slug-grid">
+  {% assign texts = site.texts | sort: 'title' %}
+  {% for text in texts %}
+  <article class="slug-card">
+    <a href="{{ text.url | relative_url }}"><h2>{{ text.title }}</h2></a>
+    <p>{{ text.excerpt | strip_html | truncate: 140 }}</p>
+    <div class="tags">
+      {% for tag in text.tags %}
+      <span class="tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+  </article>
+  {% endfor %}
+</section>

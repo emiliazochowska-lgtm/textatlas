@@ -1,0 +1,18 @@
+title: Text Atlas
+description: A modern magazine-style text analysis website
+baseurl: ""
+url: ""
+markdown: kramdown
+permalink: pretty
+collections:
+  texts:
+    output: true
+    permalink: /texts/:name/
+defaults:
+  - scope:
+      path: ""
+      type: texts
+    values:
+      layout: text
+plugins:
+  - jekyll-feed
