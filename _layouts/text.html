@@ -1,0 +1,57 @@
+---
+layout: default
+---
+<article class="text-layout">
+  <header>
+    <h1>{{ page.title }}</h1>
+    <div class="tags">{% for tag in page.tags %}<a class="tag" href="/tags/{{ tag | slugify }}/">{{ tag }}</a>{% endfor %}</div>
+  </header>
+
+  <section class="reading-tools">
+    <input id="searchBox" placeholder="Search within text..." oninput="searchInText(this.value)">
+    <progress id="readingProgress" max="100" value="0"></progress>
+  </section>
+
+  <section class="reading-body" id="readingBody">
+    {{ content }}
+  </section>
+
+  <section>
+    <h2>Footnotes</h2>
+    {{ page.footnotes }}
+  </section>
+
+  <section>
+    <h2>Parallel Translation</h2>
+    <div class="parallel-grid">
+      <div>{{ page.original }}</div>
+      <div>{{ page.translation }}</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Variant Editions</h2>
+    {% for variant in page.variants %}
+      <details><summary>{{ variant.name }}</summary>{{ variant.text }}</details>
+    {% endfor %}
+  </section>
+
+  <section>
+    <h2>Author Timeline</h2>
+    <ul>{% for item in site.data.timeline %}<li>{{ item.year }} — {{ item.label }}</li>{% endfor %}</ul>
+  </section>
+
+  <section>
+    <h2>Linked Themes</h2>
+    <div id="themeGraph">Theme graph placeholder (ready for D3/vis.js)</div>
+  </section>
+
+  <section id="questions">
+    <h2>Teacher Dashboard Data Source</h2>
+    <form class="questionnaire" data-text-id="{{ page.slug }}">
+      <textarea placeholder="Private response"></textarea>
+      <button type="button" onclick="savePrivateAnswer(this)">Save</button>
+      <button type="button" onclick="exportCSV()">Export CSV</button>
+    </form>
+  </section>
+</article>

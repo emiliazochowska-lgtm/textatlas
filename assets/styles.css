@@ -1,0 +1,26 @@
+@import url('https://api.fontshare.com/v2/css?f[]=chillax@400,500,600,700&display=swap');
+:root{
+  --bg:#efe6dc;
+  --card:#f8f1e8;
+  --text:#2d241f;
+  --accent:oklch(0.66 0.2393 354.71);
+  --muted:#8a7f75;
+  --radius:22px;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; font-family:'Chillax', sans-serif; background:var(--bg); color:var(--text);
+}
+.site-header,.page-shell{max-width:1100px;margin:auto;padding:1.2rem}
+.hero h1{font-size:4rem;margin-bottom:.5rem}
+.slug-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem}
+.slug-card,.text-layout section{background:var(--card);padding:1.25rem;border-radius:var(--radius);box-shadow:0 8px 30px rgba(0,0,0,.06)}
+.tag{display:inline-block;background:var(--accent);color:white;padding:.25rem .6rem;border-radius:999px;margin:.2rem;font-size:.85rem}
+.subnav a{margin-right:1rem;color:var(--accent)}
+.annotated{border-bottom:2px dotted var(--accent);cursor:pointer;position:relative}
+.hover-card{
+  position:absolute;background:white;border:1px solid #ddd;padding:.75rem;border-radius:14px;
+  width:260px;z-index:100;box-shadow:0 10px 30px rgba(0,0,0,.12)
+}
+textarea{width:100%;min-height:160px;padding:1rem;border-radius:14px;border:1px solid #ccc;background:#fff}
+button{background:var(--accent);color:#fff;border:none;padding:.8rem 1rem;border-radius:12px}
